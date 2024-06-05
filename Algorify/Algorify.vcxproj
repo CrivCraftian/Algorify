@@ -100,6 +100,7 @@
     <ClInclude Include="src\Algorify\Algorithms.h" />
     <ClInclude Include="src\Algorify.h" />
     <ClInclude Include="src\Algorify\Macros.h" />
+    <ClInclude Include="src\Algorify\Utilities.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\alpch.cpp">
@@ -107,6 +108,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="src\Algorify\Algorithms.cpp" />
+    <ClCompile Include="src\Algorify\Utilities.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

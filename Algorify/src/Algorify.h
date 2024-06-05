@@ -4,4 +4,4 @@
 
 // Implementation files
 #include "Algorify/Algorithms.h"
-
+#include "Algorify/Utilities.h"
