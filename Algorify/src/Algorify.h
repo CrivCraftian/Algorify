@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Algorify/Macros.h"
+#include "Algorify/Utilities/Macros.h"
 
 // Implementation files
-#include "Algorify/Algorithms.h"
-#include "Algorify/Utilities.h"
+#include "Algorify/Algorithms/Algorithms.h"
+#include "Algorify/Utilities/Utilities.h"
 
-#include "Algorify/DataTypes/BinaryTree.hpp"
-#include "Algorify/DataTypes/LinkedList.hpp"
+#include "Algorify/DataStructures/BinaryTree.hpp"
+#include "Algorify/DataStructures/LinkedList.hpp"

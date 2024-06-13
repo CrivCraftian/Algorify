@@ -13,47 +13,56 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\BinaryTrees">
-      <UniqueIdentifier>{250b8970-9b8a-4dc2-b475-842cdcdf294a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\BinaryTrees">
       <UniqueIdentifier>{3d631091-9670-4b40-ac02-beae7b0bb059}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\DataTypes">
       <UniqueIdentifier>{e5bd9c4f-48c2-4e6a-aa1d-8e6e2d14b6d1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\DataTypes\BinaryTrees">
+      <UniqueIdentifier>{250b8970-9b8a-4dc2-b475-842cdcdf294a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\DataTypes\LinkedList">
+      <UniqueIdentifier>{1b9d32ea-135b-44fd-aa0b-7cabed5bbd13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Algorithms">
+      <UniqueIdentifier>{68c696b6-be02-448d-9fdd-df66095ef750}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utilities">
+      <UniqueIdentifier>{ef92d033-aec7-4814-9e6d-37c28c363a08}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Algorify.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Algorify\Algorithms.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Algorify\Macros.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\alpch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Algorify\Utilities.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\Algorify\DataTypes\BinaryTree.hpp">
-      <Filter>Header Files\BinaryTrees</Filter>
+      <Filter>Header Files\DataTypes\BinaryTrees</Filter>
     </ClInclude>
     <ClInclude Include="src\Algorify\DataTypes\LinkedList.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\DataTypes\LinkedList</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Algorify\Algorithms\Algorithms.h">
+      <Filter>Header Files\Algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Algorify\Utilities\Macros.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Algorify\Utilities\Utilities.h">
+      <Filter>Header Files\Utilities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Algorify\Algorithms.cpp">
+    <ClCompile Include="src\Algorify\Algorithms\Algorithms.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\alpch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Algorify\Utilities.cpp">
+    <ClCompile Include="src\Algorify\Utilities\Utilities.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

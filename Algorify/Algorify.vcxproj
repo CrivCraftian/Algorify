@@ -99,18 +99,18 @@
     <ClInclude Include="src\Algorify\DataTypes\BinaryTree.hpp" />
     <ClInclude Include="src\Algorify\DataTypes\LinkedList.hpp" />
     <ClInclude Include="src\alpch.h" />
-    <ClInclude Include="src\Algorify\Algorithms.h" />
+    <ClInclude Include="src\Algorify\Algorithms\Algorithms.h" />
     <ClInclude Include="src\Algorify.h" />
-    <ClInclude Include="src\Algorify\Macros.h" />
-    <ClInclude Include="src\Algorify\Utilities.h" />
+    <ClInclude Include="src\Algorify\Utilities\Macros.h" />
+    <ClInclude Include="src\Algorify\Utilities\Utilities.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\alpch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="src\Algorify\Algorithms.cpp" />
-    <ClCompile Include="src\Algorify\Utilities.cpp" />
+    <ClCompile Include="src\Algorify\Algorithms\Algorithms.cpp" />
+    <ClCompile Include="src\Algorify\Utilities\Utilities.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
