@@ -32,18 +32,23 @@ int main()
 	Algorify::DataStructures::BinaryTree<int> bt;
 	*/
 
-	Algorify::DataStructures::LinkedList<int> nums;
+	Algorify::DataStructures::LinkedList<int> nums = { 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
 	for (auto& i : iNumbers)
 	{
-		nums.Append(i);
+		// nums.Append(i);
 	}
 
 	/*
 	LOG(bt.Search(37));
 	*/
 
-	LOG(nums.Size());
+	nums.Remove(2);
+	nums.Remove(2);
+	nums.Remove(2);
+
+	LOG(nums.ToString());
+	LOG(nums[2]);
 
 	return 0;
 }

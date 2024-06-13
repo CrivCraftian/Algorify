@@ -10,18 +10,19 @@ namespace Algorify
 		class LinkedList
 		{
 		public:
+			LinkedList(std::initializer_list<T> values);
 			LinkedList();
 			~LinkedList();
 
 			T& operator[](int index);
-			void operator=(std::initializer_list<T>& input);
 
 			void Append(const T& value);
-			void Remove(const T& value);
+			void Remove(const int index);
 
 			void Clear();
 			int Size();
 
+			std::string ToString();
 		private:
 			struct Node
 			{
@@ -33,17 +34,28 @@ namespace Algorify
 				Node() : data(NULL), back(nullptr), forw(nullptr) {};
 			};
 
-			Node* GetNode(int& index);
+			Node* GetNode(int index);
 			void DestroyList(Node* n);
+
+			void ValidateIndex(const int& index) const;
 
 			Node* Head;
 			int size = 0;
 		};
 
 		template<typename T>
-		LinkedList<T>::LinkedList()
+		LinkedList<T>::LinkedList(std::initializer_list<T> values) : Head(nullptr), size(0)
 		{
-			size = 0;
+			for (const T& value : values)
+			{
+				Append(value);
+			}
+		}
+
+		template<typename T>
+		LinkedList<T>::LinkedList() : Head(nullptr), size(0)
+		{
+
 		}
 
 		template<typename T>
@@ -58,68 +70,63 @@ namespace Algorify
 		template<typename T>
 		T& LinkedList<T>::operator[](int index)
 		{
-			if (index > size || index < 0)
-			{
-				throw std::out_of_range("Index outside the bounds of the list");
-			}
-
-			Node* n = Head;
-
-			for (int i = 0; i < index; i++)
-			{
-				if (n->forw == nullptr)
-				{
-					break;
-				}
-
-				n = n->forw;
-			}
-
-			return n->data;
-		}
-
-		template<typename T>
-		void LinkedList<T>::operator=(std::initializer_list<T>& input)
-		{
-			this->size = input.size;
-
-			if (Head == nullptr)
-			{
-				Head = new Node();
-			}
-
-			Node* n = Head;
-
-			for (int i = 0; i < size; i++)
-			{
-				if (n == nullptr)
-				{
-					continue;
-				}
-
-				n->data = input[i];
-
-				if (n->forw)
-				{
-					n = n->forw;
-				}
-			}
+			return GetNode(index)->data;
 		}
 
 		template<typename T>
 		void LinkedList<T>::Append(const T& value)
 		{
-			size++;
+			Node* newNode = new Node(value);
 
 			if (Head == NULL)
 			{
-				Head = new Node(value);
+				Head = newNode;
+				size++;
 				return;
 			}
 
-			Node* endNode = this->GetNode(size);
+			Node* endNode = this->GetNode(size-1);
 
-			endNode->forw = new Node(value);
+			newNode->back = endNode;
+
+			endNode->forw = newNode;
+
+			size++;
+		}
+
+		template<typename T>
+		void LinkedList<T>::Remove(const int index)
+		{
+			ValidateIndex(index);
+
+			Node* current = GetNode(index);
+			
+			if (current == nullptr)
+			{
+				return;
+			}
+
+			size--;
+
+			if (current->back != nullptr)
+			{
+				current->back->forw = current->forw;
+			}
+
+			if(current->forw != nullptr)
+			{
+				current->forw->back = current->back;
+			}
+
+			if (current == Head)
+			{
+				if (current->forw != nullptr)
+				{
+					Head = current->forw;
+				}
+			}
+
+			delete current;
 		}
 
 		template<typename T>
@@ -135,20 +142,32 @@ namespace Algorify
 		template<typename T>
 		int LinkedList<T>::Size()
 		{
-			return size + 1;
+			return size;
 		}
 
 		template<typename T>
-		typename LinkedList<T>::Node* LinkedList<T>::GetNode(int& index)
+		std::string LinkedList<T>::ToString()
 		{
+			std::ostringstream output;
+
+			for (int i = 0; i < size; i++)
+			{
+				output << GetNode(i)->data << ", ";
+			}
+
+			output << "\n ";
+
+			return output.str();
+		}
+
+		template<typename T>
+		typename LinkedList<T>::Node* LinkedList<T>::GetNode(int index)
+		{
+			ValidateIndex(index);
+
 			if (Head == nullptr || index < 0)
 			{
 				return nullptr;
-			}
-
-			if (index > size)
-			{
-				throw std::out_of_range("Index outside the bounds of the list");
 			}
 
 			Node* n = Head;
@@ -175,6 +194,15 @@ namespace Algorify
 			}
 
 			delete n;
+		}
+
+		template<typename T>
+		void LinkedList<T>::ValidateIndex(const int& index) const
+		{
+			if (index > size || index < 0)
+			{
+				throw std::out_of_range("Index outside the bounds of the list");
+			}
 		}
 
 	}
