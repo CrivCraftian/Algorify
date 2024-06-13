@@ -38,34 +38,79 @@ void AL_API Algorify::Algorithms::BubbleSort(std::vector<int>& input)
 
 void AL_API Algorify::Algorithms::MergeSort(std::vector<int>& arr, const int left, const int right)
 {
-	// For tomorrow
-	// Split array, then recersevely call the function
-	// Then merge again
-	if (left >= right)
+	if (right - left > 1)
 	{
+		int midpoint = left + (right - left) / 2;
+
+		MergeSort(arr, left, midpoint);
+		MergeSort(arr, midpoint, right);
+
+		Merge(arr, left, midpoint, right);
+
 		return;
 	}
+}
 
-	int midpoint = std::ceil((right + left) * 0.5f);
-
-	MergeSort(arr, left, midpoint - 1);
-	MergeSort(arr, midpoint, right);
-
-	Merge(arr, left, midpoint, right);
-
-	return void AL_API();
+void AL_API Algorify::Algorithms::MergeSort(std::vector<int>& arr)
+{
+	MergeSort(arr, 0, arr.size());
 }
 
 void Algorify::Algorithms::Merge(std::vector<int>& arr, const int& left, const int& mid, const int& right)
 {
-	std::vector<int> out;
+	std::vector<int> out(right - left);
+
+	int lStep = left;
+	int RStep = mid;
+	int i = 0;
+
+	while (lStep < mid && RStep < right)
+	{
+		if (arr[lStep] > arr[RStep])
+		{
+			out[i] = arr[RStep];
+			RStep++;
+		}
+		else
+		{
+			out[i] = arr[lStep];
+			lStep++;
+		}
+
+		i++;
+	}
+
+	while (lStep < mid)
+	{
+		out[i] = arr[lStep];
+		lStep++;
+		i++;
+	}
+
+	while (RStep < right)
+	{
+		out[i] = arr[RStep];
+		RStep++;
+		i++;
+	}
+
+	for (int i = left, k = 0; i < right; i++, k++)
+	{
+		arr[i] = out[k];
+	}
 
 	/*
-	int i, j;
-
-	while ()
+	while (LStep != mid && RStep != right - mid + 1)
 	{
-
+		if (arr[left + LStep] > arr[mid + 1 + RStep])
+		{
+			arr[left + LStep] = arr[mid + 1 + RStep];
+			LStep++;
+		}
+		else
+		{
+			RStep++;
+		}
 	}
 	*/
 }

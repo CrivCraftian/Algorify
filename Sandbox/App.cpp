@@ -5,9 +5,52 @@
 
 #define LOG(x) :: std::cout << x << "\n";
 
+int findPeakElement(std::vector<int>& nums)
+{
+	auto isPeak = [&](int i) -> bool {
+		bool leftSmaller = (i == 0) || (nums[i] > nums[i - 1]);
+		bool rightSmaller = (i == nums.size() - 1) || (nums[i] > nums[i + 1]);
+		return leftSmaller && rightSmaller;
+		};
+
+	for (int i = 0; i < nums.size() - 1; i++)
+	{
+		if (isPeak(i))
+		{
+			return i;
+		}
+	}
+
+	return -1;
+}
+
 int main()
 {
-	std::vector<int> randNums = Algorify::Utilities::GenerateNumberSet(10000, 1, 10000);
+	std::vector<int> iNumbers = { 5, 8, 15, 37, 43, 95, 76, 92 };
+
+	/*
+	Algorify::DataStructures::BinaryTree<int> bt;
+	*/
+
+	Algorify::DataStructures::LinkedList<int> nums;
+
+	for (auto& i : iNumbers)
+	{
+		nums.Append(i);
+	}
+
+	/*
+	LOG(bt.Search(37));
+	*/
+
+	LOG(nums.Size());
+
+	return 0;
+}
+
+//
+	/*
+	std::vector<int> randNums = Algorify::Utilities::GenerateNumberSet(100000, 1, 100000);
 
 	LOG("Before: " + Algorify::Utilities::VectorToString<int>(randNums));
 
@@ -15,14 +58,12 @@ int main()
 
 	// Algorithm
 	auto start = std::chrono::high_resolution_clock::now();
-	Algorify::Algorithms::BubbleSort(randNums);
+	Algorify::Algorithms::MergeSort(randNums);
 	auto end = std::chrono::high_resolution_clock::now();
 
 	auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
 
 	LOG("After: " + Algorify::Utilities::VectorToString<int>(randNums));
-	
-	LOG("Bubble sort took: " << duration.count() << "ms")
 
-	return 0;
-}
+	LOG("Merge sort took: " << duration.count() << "ms")
+	*/

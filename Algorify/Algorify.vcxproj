@@ -96,6 +96,8 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Algorify\DataTypes\BinaryTree.hpp" />
+    <ClInclude Include="src\Algorify\DataTypes\LinkedList.hpp" />
     <ClInclude Include="src\alpch.h" />
     <ClInclude Include="src\Algorify\Algorithms.h" />
     <ClInclude Include="src\Algorify.h" />

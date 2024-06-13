@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\BinaryTrees">
+      <UniqueIdentifier>{250b8970-9b8a-4dc2-b475-842cdcdf294a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BinaryTrees">
+      <UniqueIdentifier>{3d631091-9670-4b40-ac02-beae7b0bb059}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\DataTypes">
+      <UniqueIdentifier>{e5bd9c4f-48c2-4e6a-aa1d-8e6e2d14b6d1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Algorify.h">
@@ -28,6 +37,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Algorify\Utilities.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Algorify\DataTypes\BinaryTree.hpp">
+      <Filter>Header Files\BinaryTrees</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Algorify\DataTypes\LinkedList.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
