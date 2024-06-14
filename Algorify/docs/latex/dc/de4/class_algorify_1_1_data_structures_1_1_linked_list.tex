@@ -1,0 +1,177 @@
+\doxysection{Algorify\+::Data\+Structures\+::Linked\+List\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_algorify_1_1_data_structures_1_1_linked_list}{}\label{class_algorify_1_1_data_structures_1_1_linked_list}\index{Algorify::DataStructures::LinkedList$<$ T $>$@{Algorify::DataStructures::LinkedList$<$ T $>$}}
+
+
+A class that stores linked data in a list format.  
+
+
+
+
+{\ttfamily \#include $<$Linked\+List.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_algorify_1_1_data_structures_1_1_linked_list_a29ca5bf1f54111e5196d8f0b002ce333}\label{class_algorify_1_1_data_structures_1_1_linked_list_a29ca5bf1f54111e5196d8f0b002ce333} 
+{\bfseries Linked\+List} (std\+::initializer\+\_\+list$<$ T $>$ values)
+\item 
+void \mbox{\hyperlink{class_algorify_1_1_data_structures_1_1_linked_list_a7b0d2d783b7194cd40bd10a1e1730ee7}{Prepend}} (const T \&value)
+\begin{DoxyCompactList}\small\item\em Adds element to beginning of the list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_algorify_1_1_data_structures_1_1_linked_list_aac5982d2091fb14529566f06394a829e}{Append}} (const T \&value)
+\begin{DoxyCompactList}\small\item\em Adds element to end of the list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_algorify_1_1_data_structures_1_1_linked_list_a6e194b860b3b7d3d8e79417fad429b4d}{Insert}} (const int \&index, const T \&value)
+\begin{DoxyCompactList}\small\item\em Inserts the element at the given index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_algorify_1_1_data_structures_1_1_linked_list_a819083c817d7052d8b3c298dff8d9352}{Remove}} (const int index)
+\begin{DoxyCompactList}\small\item\em Removes element at given index. \end{DoxyCompactList}\item 
+T \& \mbox{\hyperlink{class_algorify_1_1_data_structures_1_1_linked_list_aaa78f784458ab26cc38dc7c881cf0aa2}{Get\+First}} ()
+\begin{DoxyCompactList}\small\item\em Returns the first element in the list. \end{DoxyCompactList}\item 
+T \& \mbox{\hyperlink{class_algorify_1_1_data_structures_1_1_linked_list_afdfe90f97be3588a26d940ca33e4f090}{Get\+Last}} ()
+\begin{DoxyCompactList}\small\item\em Returns the last element in the list. \end{DoxyCompactList}\item 
+\Hypertarget{class_algorify_1_1_data_structures_1_1_linked_list_aa94ad123ef8f89b5381f3fab914bec67}\label{class_algorify_1_1_data_structures_1_1_linked_list_aa94ad123ef8f89b5381f3fab914bec67} 
+void {\bfseries Clear} ()
+\begin{DoxyCompactList}\small\item\em Clears the list of all values. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_algorify_1_1_data_structures_1_1_linked_list_a6bee2b0da39b45ef178a9879ad8be26f}{Size}} ()
+\begin{DoxyCompactList}\small\item\em Returns the size of the list. \end{DoxyCompactList}\item 
+\Hypertarget{class_algorify_1_1_data_structures_1_1_linked_list_afdb0345148d540f5dd7d81f503202c0a}\label{class_algorify_1_1_data_structures_1_1_linked_list_afdb0345148d540f5dd7d81f503202c0a} 
+T \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (int index)
+\item 
+\Hypertarget{class_algorify_1_1_data_structures_1_1_linked_list_ae5f2af932d6759ec54711d50521b4c89}\label{class_algorify_1_1_data_structures_1_1_linked_list_ae5f2af932d6759ec54711d50521b4c89} 
+\mbox{\hyperlink{class_algorify_1_1_data_structures_1_1_linked_list}{Linked\+List}}$<$ T $>$ \& {\bfseries operator=} (const \mbox{\hyperlink{class_algorify_1_1_data_structures_1_1_linked_list}{Linked\+List}} \&other)
+\item 
+\Hypertarget{class_algorify_1_1_data_structures_1_1_linked_list_a9647d06a69c6122d39a8a025cd4608a9}\label{class_algorify_1_1_data_structures_1_1_linked_list_a9647d06a69c6122d39a8a025cd4608a9} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{class_algorify_1_1_data_structures_1_1_linked_list}{Linked\+List}}$<$ T $>$ \&other) const
+\item 
+\Hypertarget{class_algorify_1_1_data_structures_1_1_linked_list_a3b38456782cb1f8da390c03653d5bf0e}\label{class_algorify_1_1_data_structures_1_1_linked_list_a3b38456782cb1f8da390c03653d5bf0e} 
+bool {\bfseries operator!=} (const \mbox{\hyperlink{class_algorify_1_1_data_structures_1_1_linked_list}{Linked\+List}}$<$ T $>$ \&other) const
+\item 
+\Hypertarget{class_algorify_1_1_data_structures_1_1_linked_list_af0a00a407169c2b340aeb41ce17d1049}\label{class_algorify_1_1_data_structures_1_1_linked_list_af0a00a407169c2b340aeb41ce17d1049} 
+std\+::string {\bfseries To\+String} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Algorify\+::\+Data\+Structures\+::\+Linked\+List$<$ T $>$}
+A class that stores linked data in a list format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & Type of data stored in list \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_algorify_1_1_data_structures_1_1_linked_list_aac5982d2091fb14529566f06394a829e}\index{Algorify::DataStructures::LinkedList$<$ T $>$@{Algorify::DataStructures::LinkedList$<$ T $>$}!Append@{Append}}
+\index{Append@{Append}!Algorify::DataStructures::LinkedList$<$ T $>$@{Algorify::DataStructures::LinkedList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Append()}{Append()}}
+{\footnotesize\ttfamily \label{class_algorify_1_1_data_structures_1_1_linked_list_aac5982d2091fb14529566f06394a829e} 
+template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_algorify_1_1_data_structures_1_1_linked_list}{Algorify\+::\+Data\+Structures\+::\+Linked\+List}}$<$ T $>$\+::\+Append (\begin{DoxyParamCaption}\item[{const T \&}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Adds element to end of the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Value being inserted\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_algorify_1_1_data_structures_1_1_linked_list_aaa78f784458ab26cc38dc7c881cf0aa2}\index{Algorify::DataStructures::LinkedList$<$ T $>$@{Algorify::DataStructures::LinkedList$<$ T $>$}!GetFirst@{GetFirst}}
+\index{GetFirst@{GetFirst}!Algorify::DataStructures::LinkedList$<$ T $>$@{Algorify::DataStructures::LinkedList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetFirst()}{GetFirst()}}
+{\footnotesize\ttfamily \label{class_algorify_1_1_data_structures_1_1_linked_list_aaa78f784458ab26cc38dc7c881cf0aa2} 
+template$<$typename T $>$ \\
+T \& \mbox{\hyperlink{class_algorify_1_1_data_structures_1_1_linked_list}{Algorify\+::\+Data\+Structures\+::\+Linked\+List}}$<$ T $>$\+::\+Get\+First (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the first element in the list. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{class_algorify_1_1_data_structures_1_1_linked_list_afdfe90f97be3588a26d940ca33e4f090}\index{Algorify::DataStructures::LinkedList$<$ T $>$@{Algorify::DataStructures::LinkedList$<$ T $>$}!GetLast@{GetLast}}
+\index{GetLast@{GetLast}!Algorify::DataStructures::LinkedList$<$ T $>$@{Algorify::DataStructures::LinkedList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetLast()}{GetLast()}}
+{\footnotesize\ttfamily \label{class_algorify_1_1_data_structures_1_1_linked_list_afdfe90f97be3588a26d940ca33e4f090} 
+template$<$typename T $>$ \\
+T \& \mbox{\hyperlink{class_algorify_1_1_data_structures_1_1_linked_list}{Algorify\+::\+Data\+Structures\+::\+Linked\+List}}$<$ T $>$\+::\+Get\+Last (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the last element in the list. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{class_algorify_1_1_data_structures_1_1_linked_list_a6e194b860b3b7d3d8e79417fad429b4d}\index{Algorify::DataStructures::LinkedList$<$ T $>$@{Algorify::DataStructures::LinkedList$<$ T $>$}!Insert@{Insert}}
+\index{Insert@{Insert}!Algorify::DataStructures::LinkedList$<$ T $>$@{Algorify::DataStructures::LinkedList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Insert()}{Insert()}}
+{\footnotesize\ttfamily \label{class_algorify_1_1_data_structures_1_1_linked_list_a6e194b860b3b7d3d8e79417fad429b4d} 
+template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_algorify_1_1_data_structures_1_1_linked_list}{Algorify\+::\+Data\+Structures\+::\+Linked\+List}}$<$ T $>$\+::\+Insert (\begin{DoxyParamCaption}\item[{const int \&}]{index}{, }\item[{const T \&}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Inserts the element at the given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of insertion\\
+\hline
+{\em value} & Value being inserted\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_algorify_1_1_data_structures_1_1_linked_list_a7b0d2d783b7194cd40bd10a1e1730ee7}\index{Algorify::DataStructures::LinkedList$<$ T $>$@{Algorify::DataStructures::LinkedList$<$ T $>$}!Prepend@{Prepend}}
+\index{Prepend@{Prepend}!Algorify::DataStructures::LinkedList$<$ T $>$@{Algorify::DataStructures::LinkedList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Prepend()}{Prepend()}}
+{\footnotesize\ttfamily \label{class_algorify_1_1_data_structures_1_1_linked_list_a7b0d2d783b7194cd40bd10a1e1730ee7} 
+template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_algorify_1_1_data_structures_1_1_linked_list}{Algorify\+::\+Data\+Structures\+::\+Linked\+List}}$<$ T $>$\+::\+Prepend (\begin{DoxyParamCaption}\item[{const T \&}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Adds element to beginning of the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Value being inserted\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_algorify_1_1_data_structures_1_1_linked_list_a819083c817d7052d8b3c298dff8d9352}\index{Algorify::DataStructures::LinkedList$<$ T $>$@{Algorify::DataStructures::LinkedList$<$ T $>$}!Remove@{Remove}}
+\index{Remove@{Remove}!Algorify::DataStructures::LinkedList$<$ T $>$@{Algorify::DataStructures::LinkedList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Remove()}{Remove()}}
+{\footnotesize\ttfamily \label{class_algorify_1_1_data_structures_1_1_linked_list_a819083c817d7052d8b3c298dff8d9352} 
+template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_algorify_1_1_data_structures_1_1_linked_list}{Algorify\+::\+Data\+Structures\+::\+Linked\+List}}$<$ T $>$\+::\+Remove (\begin{DoxyParamCaption}\item[{const int}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Removes element at given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of removal\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_algorify_1_1_data_structures_1_1_linked_list_a6bee2b0da39b45ef178a9879ad8be26f}\index{Algorify::DataStructures::LinkedList$<$ T $>$@{Algorify::DataStructures::LinkedList$<$ T $>$}!Size@{Size}}
+\index{Size@{Size}!Algorify::DataStructures::LinkedList$<$ T $>$@{Algorify::DataStructures::LinkedList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Size()}{Size()}}
+{\footnotesize\ttfamily \label{class_algorify_1_1_data_structures_1_1_linked_list_a6bee2b0da39b45ef178a9879ad8be26f} 
+template$<$typename T $>$ \\
+int \mbox{\hyperlink{class_algorify_1_1_data_structures_1_1_linked_list}{Algorify\+::\+Data\+Structures\+::\+Linked\+List}}$<$ T $>$\+::\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the size of the list. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Algorify/\+Data\+Structures/Linked\+List.\+hpp\end{DoxyCompactItemize}

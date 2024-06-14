@@ -6,6 +6,10 @@ namespace Algorify
 {
 	namespace DataStructures
 	{
+		/** 
+		* @brief A class that stores linked data in a list format
+		* @param T Type of data stored in list
+		*/ 
 		template<typename T>
 		class LinkedList
 		{
@@ -14,15 +18,52 @@ namespace Algorify
 			LinkedList();
 			~LinkedList();
 
+			/// <summary>
+			/// Adds element to beginning of the list
+			/// </summary>
+			/// <param name="value">Value being inserted</param>
 			void Prepend(const T& value);
+
+			/// <summary>
+			/// Adds element to end of the list
+			/// </summary>
+			/// <param name="value">Value being inserted</param>
 			void Append(const T& value);
+
+			/// <summary>
+			/// Inserts the element at the given index
+			/// </summary>
+			/// <param name="index">Index of insertion</param>
+			/// <param name="value">Value being inserted</param>
 			void Insert(const int& index, const T& value);
+
+			/// <summary>
+			/// Removes element at given index
+			/// </summary>
+			/// <param name="index">Index of removal</param>
 			void Remove(const int index);
 
+			/// <summary>
+			/// Returns the first element in the list
+			/// </summary>
+			/// <returns></returns>
 			T& GetFirst();
+
+			/// <summary>
+			/// Returns the last element in the list
+			/// </summary>
+			/// <returns></returns>
 			T& GetLast();
 
+			/// <summary>
+			/// Clears the list of all values
+			/// </summary>
 			void Clear();
+
+			/// <summary>
+			/// Returns the size of the list
+			/// </summary>
+			/// <returns></returns>
 			int Size();
 
 			T& operator[](int index);

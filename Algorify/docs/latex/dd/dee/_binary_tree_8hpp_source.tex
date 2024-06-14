@@ -1,0 +1,166 @@
+\doxysection{Binary\+Tree.\+hpp}
+\hypertarget{_binary_tree_8hpp_source}{}\label{_binary_tree_8hpp_source}\index{src/Algorify/DataStructures/BinaryTree.hpp@{src/Algorify/DataStructures/BinaryTree.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{namespace\ }Algorify}
+\DoxyCodeLine{00004\ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{keyword}{namespace\ }DataStructures}
+\DoxyCodeLine{00006\ \ \ \ \ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_algorify_1_1_data_structures_1_1_binary_tree}{BinaryTree}}}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_algorify_1_1_data_structures_1_1_binary_tree_a627169d9b6179632381bf26c3e3643b5}{Insert}}(\textcolor{keyword}{const}\ T\&\ value);}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_algorify_1_1_data_structures_1_1_binary_tree_a8f0389b585b4d297700c9edfbf7b330c}{Search}}(\textcolor{keyword}{const}\ T\&\ value);}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_algorify_1_1_data_structures_1_1_binary_tree_ac870e6e4c138b84da8ac25e433da92a3}{IsEmpty}}();}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_algorify_1_1_data_structures_1_1_binary_tree_a5e40c9af24fee1ef4436fc51ba11073f}{Clear}}();}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_algorify_1_1_data_structures_1_1_binary_tree}{\string~BinaryTree}}();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }Node}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ data;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Node*\ left;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Node*\ right;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Node(\textcolor{keyword}{const}\ T\&\ value)\ :\ data(value),\ left(\textcolor{keyword}{nullptr}),\ right(\textcolor{keyword}{nullptr})\ \{\};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ Node*\ root;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ DeleteTree(Node*\ node);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_algorify_1_1_data_structures_1_1_binary_tree_a627169d9b6179632381bf26c3e3643b5}{BinaryTree<T>::Insert}}(\textcolor{keyword}{const}\ T\&\ value)}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (root\ ==\ NULL)}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Root\ Node\ Added"{}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ root\ =\ \textcolor{keyword}{new}\ Node(value);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ std::queue<Node*>\ q;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ q.push(root);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!q.empty())}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Node*\ temp\ =\ q.front();}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ q.pop();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (temp-\/>left\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Left\ Node\ Added"{}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp-\/>left\ =\ \textcolor{keyword}{new}\ Node(value);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ q.push(temp-\/>left);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (temp-\/>right\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Right\ Node\ Added"{}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp-\/>right\ =\ \textcolor{keyword}{new}\ Node(value);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ q.push(temp-\/>right);}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_algorify_1_1_data_structures_1_1_binary_tree_a8f0389b585b4d297700c9edfbf7b330c}{BinaryTree<T>::Search}}(\textcolor{keyword}{const}\ T\&\ value)}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (root\ ==\ NULL)}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ std::queue<Node*>\ Q;}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ Q.push(root);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!Q.empty())}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Node*\ current\ =\ Q.front();}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Q.pop();}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (current-\/>data\ ==\ value)}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (current-\/>left\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Q.push(current-\/>left);}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (current-\/>right\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Q.push(current-\/>right);}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_algorify_1_1_data_structures_1_1_binary_tree_ac870e6e4c138b84da8ac25e433da92a3}{BinaryTree<T>::IsEmpty}}()}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (root\ ==\ NULL)}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_algorify_1_1_data_structures_1_1_binary_tree_a5e40c9af24fee1ef4436fc51ba11073f}{BinaryTree<T>::Clear}}()}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsEmpty())}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ DeleteTree(root);}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ root\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_algorify_1_1_data_structures_1_1_binary_tree}{BinaryTree<T>::\string~BinaryTree}}()}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (root\ !=\ NULL)}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DeleteTree(root);}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ BinaryTree<T>::DeleteTree(Node*\ node)}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (node\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DeleteTree(node-\/>left);}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DeleteTree(node-\/>right);}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ node;}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ \}}
+\DoxyCodeLine{00180\ \}}
+
+\end{DoxyCode}
