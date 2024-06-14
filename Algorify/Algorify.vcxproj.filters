@@ -39,10 +39,10 @@
     <ClInclude Include="src\alpch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Algorify\DataTypes\BinaryTree.hpp">
+    <ClInclude Include="src\Algorify\DataStructures\BinaryTree.hpp">
       <Filter>Header Files\DataTypes\BinaryTrees</Filter>
     </ClInclude>
-    <ClInclude Include="src\Algorify\DataTypes\LinkedList.hpp">
+    <ClInclude Include="src\Algorify\DataStructures\LinkedList.hpp">
       <Filter>Header Files\DataTypes\LinkedList</Filter>
     </ClInclude>
     <ClInclude Include="src\Algorify\Algorithms\Algorithms.h">

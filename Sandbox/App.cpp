@@ -24,6 +24,8 @@ int findPeakElement(std::vector<int>& nums)
 	return -1;
 }
 
+using namespace Algorify::DataStructures;
+
 int main()
 {
 	std::vector<int> iNumbers = { 5, 8, 15, 37, 43, 95, 76, 92 };
@@ -32,23 +34,17 @@ int main()
 	Algorify::DataStructures::BinaryTree<int> bt;
 	*/
 
-	Algorify::DataStructures::LinkedList<int> nums = { 1, 2, 3, 4, 5, 6, 7, 8, 9};
+	LinkedList<int> nums = { 1, 2, 3, 4, 5, 6, 7, 8, 9};
+	LinkedList<int> nums2;
 
-	for (auto& i : iNumbers)
+	for (int i = 0; i < nums.Size(); i++)
 	{
-		// nums.Append(i);
+		nums2.Prepend(nums[i]);
 	}
 
-	/*
-	LOG(bt.Search(37));
-	*/
-
-	nums.Remove(2);
-	nums.Remove(2);
-	nums.Remove(2);
-
 	LOG(nums.ToString());
-	LOG(nums[2]);
+	LOG(nums2.ToString());
+	LOG((nums == nums2 ? "true" : "false"));
 
 	return 0;
 }
