@@ -43,6 +43,8 @@ namespace Algorify
 			/// <param name="index">Index of removal</param>
 			void Remove(const int index);
 
+			int Search(const T& value);
+
 			/// <summary>
 			/// Returns the first element in the list
 			/// </summary>
@@ -220,6 +222,33 @@ namespace Algorify
 			}
 
 			delete current;
+		}
+
+		template<typename T>
+		int LinkedList<T>::Search(const T& value)
+		{
+			if (Head == nullptr)
+			{
+				std::out_of_range("List is empty");
+			}
+
+			Node* current = Head;
+
+			for (int i = 0; i < size; i++)
+			{
+				if (current == nullptr)
+				{
+					continue;
+				}
+
+				if (current->data == value)
+				{
+					return i;
+				}
+				current = current->forw;
+			}
+
+			return -1;
 		}
 
 		template<typename T>
