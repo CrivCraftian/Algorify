@@ -10,6 +10,7 @@ namespace Algorify
 		* @brief A class that stores linked data in a list format
 		* @param T Type of data stored in list
 		*/ 
+
 		template<typename T>
 		class LinkedList
 		{
@@ -458,6 +459,7 @@ namespace Algorify
 			}
 
 			delete n;
+			n = nullptr;
 		}
 
 		template<typename T>

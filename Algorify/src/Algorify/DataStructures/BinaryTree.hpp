@@ -4,6 +4,7 @@ namespace Algorify
 {
 	namespace DataStructures
 	{
+
 		template<typename T>
 		class BinaryTree
 		{
